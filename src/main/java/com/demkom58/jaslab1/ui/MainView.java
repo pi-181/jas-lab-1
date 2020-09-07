@@ -30,7 +30,6 @@ public class MainView extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setTitle("Jar Viewer");
-
     }
 
     private void createUIComponents() {

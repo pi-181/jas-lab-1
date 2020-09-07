@@ -1,12 +1,10 @@
 package com.demkom58.jaslab1.jar;
 
 import com.demkom58.jaslab1.jar.type.ObjectInfo;
-import com.demkom58.jaslab1.util.ClassUtil;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.Collection;
-import java.util.jar.JarEntry;
 
 public abstract class ClassMapper extends GenericMapper<Class<?>> {
 
@@ -35,3 +33,6 @@ public abstract class ClassMapper extends GenericMapper<Class<?>> {
     }
 
 }
+
+
+

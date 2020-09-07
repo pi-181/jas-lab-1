@@ -1,12 +1,9 @@
 package com.demkom58.jaslab1.jar;
 
-import com.demkom58.jaslab1.jar.type.ObjectInfo;
 import com.demkom58.jaslab1.jar.type.PackageInfo;
 
-import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.Collection;
-import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.regex.Pattern;
 

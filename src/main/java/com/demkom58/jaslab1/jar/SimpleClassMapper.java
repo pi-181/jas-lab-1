@@ -18,3 +18,4 @@ public class SimpleClassMapper extends ClassMapper {
     }
 
 }
+

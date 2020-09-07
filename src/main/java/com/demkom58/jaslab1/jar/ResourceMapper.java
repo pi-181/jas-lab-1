@@ -6,7 +6,6 @@ import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.Collection;
 import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
 
 public abstract class ResourceMapper extends GenericMapper<JarEntry> {
 
