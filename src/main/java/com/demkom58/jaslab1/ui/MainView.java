@@ -10,7 +10,6 @@ import javax.swing.tree.TreePath;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
-import java.io.IOException;
 
 public class MainView extends JFrame {
     private JPanel rootPanel;
@@ -21,6 +20,7 @@ public class MainView extends JFrame {
 
     private JTree jarTree;
     private JList<String> infoList;
+    private JProgressBar progressBar;
 
     private TreeModelMapper modelMapper;
 
@@ -51,8 +51,8 @@ public class MainView extends JFrame {
             if (result == JFileChooser.APPROVE_OPTION) {
                 final File file = fileChooser.getSelectedFile();
                 try {
-                    modelMapper.open(file);
-                } catch (IOException e) {
+                    modelMapper.open(file, this);
+                } catch (Exception e) {
                     JOptionPane.showMessageDialog(this, e.getMessage(), "An error occurred", JOptionPane.ERROR_MESSAGE);
                 }
             }
@@ -85,4 +85,20 @@ public class MainView extends JFrame {
 
         infoList.setModel(((ObjectInfo) userObject).getListModel());
     }
+
+    public void setProgress(int progress) {
+        progressBar.setMaximum(100);
+
+        if (progress < 0) {
+            progressBar.setVisible(false);
+            progressBar.setValue(0);
+            openFileMenuItem.setEnabled(true);
+            return;
+        }
+
+        progressBar.setValue(progress);
+        progressBar.setVisible(true);
+        openFileMenuItem.setEnabled(false);
+    }
+
 }
