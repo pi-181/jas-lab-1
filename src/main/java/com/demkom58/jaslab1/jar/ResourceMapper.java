@@ -5,6 +5,7 @@ import com.demkom58.jaslab1.jar.type.ObjectInfo;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.jar.JarEntry;
 
 public abstract class ResourceMapper extends GenericMapper<JarEntry> {
@@ -37,10 +38,13 @@ public abstract class ResourceMapper extends GenericMapper<JarEntry> {
         String name = getLastPartName(jarEntry.getName(), "/");
 
         final DefaultListModel<String> description = new DefaultListModel<>();
-        description.addAll(info);
+        final Iterator<String> iterator = info.iterator();
+        for (int i = 0; iterator.hasNext(); i++)
+            description.add(i, iterator.next());
 
-        final ObjectInfo objectInfo = new ObjectInfo(name, description);
-        final DefaultMutableTreeNode objectNode = new DefaultMutableTreeNode(objectInfo);
+        final DefaultMutableTreeNode objectNode
+                = new DefaultMutableTreeNode(new ObjectInfo(name, description));
+
         packageNode.add(objectNode);
     }
 

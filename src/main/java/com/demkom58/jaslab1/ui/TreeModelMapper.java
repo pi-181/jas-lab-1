@@ -52,7 +52,7 @@ public class TreeModelMapper {
                 try {
                     Class<?> foundClass = Class.forName(className, false, classLoader);
                     classMapper.handle(classesNode, jarFile, foundClass);
-                } catch (Exception e2) {
+                } catch (Throwable e2) {
                     System.out.println("Error:" + e2.getMessage());
                 }
             } else {
